@@ -25,12 +25,8 @@ mixin nav(name, id, style)
                     +nav_item( "#" ) Weekly suggestions
                 +nav_item( "recipes" ) Recipes
                 +nav_item( "pairings" ) Pairings
-            form.navbar-form.navbar-left(role="search")
-                div.form-group
-                    input.form-control(type="text" placeholder="Search")
-                button.btn.btn-default(type="submit") Submit
             ul.nav.navbar-nav.navbar-right
-                +login_item( "login" )  Log in
+                +nav_item( "login" ) Log in
 
 
 mixin nav_item(href, active)
