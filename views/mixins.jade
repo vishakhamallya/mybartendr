@@ -14,14 +14,18 @@ mixin nav(name, id, style)
             ul.nav.navbar-nav.navbar-left
                 +nav_item( "/", "active" ) Home
                 +nav_item_dropdown( "#" )( label="Cabinet" )
-                    +nav_item( "#" ) Your favorites
-                    +nav_item( "#" ) Saved for later
-                    +nav_item( "#" ) Custom recipes
-                    +nav_item( "#" ) Weekly suggestions
-                +nav_item( "recipes" ) Recipes
-                +nav_item( "pairings" ) Pairings
+                    +nav_item( "#" ) Your Favorites
+                    +nav_item( "#" ) Saved For Later
+                    +nav_item( "#" ) Custom Recipes
+                    +nav_item( "#" ) Weekly Suggestions
+                +nav_item_dropdown( "#" )( label="recipes" )
+                    +nav_item( "#" ) All Recipes
+                    +nav_item( "#" ) Families
+                    +nav_item( "#" ) Alcohols
+             //   +nav_item( "pairings" ) Pairings
             ul.nav.navbar-nav.navbar-right
-                +nav_item( "login" ) Login
+                +nav_item_dropdown( "login" ) Login
+
 
 
 mixin nav_item(href, active)
