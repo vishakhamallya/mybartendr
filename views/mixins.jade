@@ -1,3 +1,8 @@
+// Themes
+mixin bootswatch(theme)
+    link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/" + theme + "/bootstrap.min.css", rel="stylesheet")
+// End themes
+
 //- Navbar mixins
 mixin nav(name, id, style)
     - var style = (typeof style === 'undefined') ? "default" : style
@@ -8,7 +13,7 @@ mixin nav(name, id, style)
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-            a.navbar-brand(href="#")= name
+            a.navbar-brand(href="/")= name
 
         div.collapse.navbar-collapse( id=id )
             ul.nav.navbar-nav.navbar-left
@@ -20,6 +25,10 @@ mixin nav(name, id, style)
                     +nav_item( "#" ) Weekly suggestions
                 +nav_item( "recipes" ) Recipes
                 +nav_item( "pairings" ) Pairings
+            form.navbar-form.navbar-left(role="search")
+                div.form-group
+                    input.form-control(type="text" placeholder="Search")
+                button.btn.btn-default(type="submit") Submit
             ul.nav.navbar-nav.navbar-right
                 +nav_item( "login" ) Login
 
