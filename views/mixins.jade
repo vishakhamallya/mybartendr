@@ -26,7 +26,30 @@ mixin nav(name, id, style)
                 +nav_item( "recipes" ) Recipes
                 +nav_item( "pairings" ) Pairings
             ul.nav.navbar-nav.navbar-right
-                +nav_item( "login" ) Log in
+                +nav_login_dropdown( "#" )( label= "Log in" )K
+                    div.row
+                        div.col-md-12
+                            a.login-text(href="#") Log in via:
+                                div.social-buttons
+                                    a.btn.btn-fb(href="#") Facebook
+                              //  form.form(role="form", method="post", action="login", accept-charset="UTF-8", id="login-nav")
+                                    div.form-group
+                                        label.sr-only(href="#", for="InputEmail") Email Address
+                                        input.form-control(type="email", id="InputEmail", placeholder="Email Address" required)
+                                    div.form-group
+                                        label.sr-only(href="#", for="InputPassword") Password
+                                        input.form-control(type="password", id="InputPassword", placeholder="Password" required)
+                                        div.block-text-right(href="#", type="submit") Forgot your password?
+                                    div.form-group
+                                        buttom.btn-primary-btn-block(href="#", type="submit")
+                                    div.checkbox
+                                        label
+                                            input(href="#", type="checkbox") keep my logged in
+
+
+
+
+
 
 
 mixin nav_item(href, active)
@@ -52,4 +75,24 @@ mixin nav_header
     li.dropdown-header
         block
 
-//- End navbar mixins
+mixin nav_login_dropdown
+    li(class=["dropdown", active])
+        a.dropdown-toggle( href=href, data-toggle="dropdown", role="button" )=attributes.label
+            span.caret
+        ul.dropdown-menu(role="menu")
+            block
+//- End
+        navbar mixins
+
+
+
+
+
+
+
+
+
+
+
+
+
