@@ -26,10 +26,10 @@ mixin nav(name, id, style)
                 +nav_item( "recipes" ) Recipes
                 +nav_item( "pairings" ) Pairings
             ul.nav.navbar-nav.navbar-right
-                +nav_login_dropdown( "#" )( label= "Log in" )K
+                +nav_login_dropdown( "#" )( label= "Log in" )
                     div.row
                         div.col-md-12
-                            a.login-text(href="#") Log in via:
+                            +nav_header Log in via:
                                 div.social-buttons
                                     a.btn.btn-fb(href="#") Facebook
                               //  form.form(role="form", method="post", action="login", accept-charset="UTF-8", id="login-nav")
