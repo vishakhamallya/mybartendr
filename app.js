@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -42,5 +43,20 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// mysql
+var con = mysql.createConnection({
+    host: "192.154.231.67",
+    user: "mybarten_admin",
+    password: "codeRED-99",
+    database: "mybarten_database"
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
+
+
 
 module.exports = app;
