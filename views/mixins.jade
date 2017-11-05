@@ -30,11 +30,16 @@ mixin nav(name, id, style)
                     input.form-control(type="text" placeholder="Search")
                 button.btn.btn-default(type="submit") Submit
             ul.nav.navbar-nav.navbar-right
-                +nav_item( "login" ) Login
+                +login_item( "login" )  Log in
 
 
 mixin nav_item(href, active)
     li(class=active): a( href=href )
+        block
+
+mixin login_item(href, active)
+    li(class=active): a( href=href )
+        i.fa.fa-sign-in
         block
 
 mixin nav_item_dropdown(href, active)
